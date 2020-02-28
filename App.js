@@ -1,26 +1,32 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import CheckBox from "react-native-web/src/exports/CheckBox";
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import {Navbar} from './components/navbar/Navbar'
+import {MyCheckbox} from './components/checkbox/Checkbox'
 
 export default class LotsOfGreetings extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <Navbar/>
-            <View style={{ flexDirection: 'row' }}>
-                <CheckBox />
-                <Text style={{marginTop: -2, color: '#fff'}}>this is checkbox</Text>
+            <Navbar title='Чек Лист СУШИ ХИРО'/>
+            <View style={styles.cbWrapper}>
+               <MyCheckbox title='первый' />
+               <MyCheckbox title='второй' />
+               <MyCheckbox title='третий' />
             </View>
         </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-
-  },
-});
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    cbWrapper: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        padding: 10
+    }
+})
